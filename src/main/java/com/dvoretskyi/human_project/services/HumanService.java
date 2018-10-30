@@ -33,7 +33,7 @@ public interface HumanService {
    */
   void deleteHumanById(long id);
 
- void findAll(Human human);
+  void findAll(Human human);
 
   /**
    * Find all humans list.
