@@ -34,7 +34,7 @@ public class HumanController {
    *
    * @return the all humans
    */
-  @RequestMapping("/human")
+  @RequestMapping(value = "/human", method = RequestMethod.GET)
   public List<Human> getAllHumans() {
     return humanService.findAllHumans();
   }
@@ -56,7 +56,7 @@ public class HumanController {
    * @param human the human
    * @return the human
    */
-  @RequestMapping(value = "/human", method = RequestMethod.POST)
+  @RequestMapping(value = "/human")
   public Human addHuman(Human human) {
     return humanService.saveHuman(human);
   }
