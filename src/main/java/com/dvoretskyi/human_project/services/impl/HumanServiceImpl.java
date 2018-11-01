@@ -19,6 +19,11 @@ public class HumanServiceImpl implements HumanService {
   private List<Human> humanList = new ArrayList<>();
 
   @Override
+  public Human findBySecondname(String secondName) {
+    return humanRepository.findBySecondName(secondName);
+  }
+
+  @Override
   public Human findById(long id) {
     return humanRepository.findById(id).get();
   }

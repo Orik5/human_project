@@ -8,15 +8,25 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = {HumanProjectApplication.class})
+@SpringBootTest
+@ActiveProfiles("test")
+@RunWith(SpringJUnit4ClassRunner.class)
 public class ServicesTests {
 
   @Autowired
   private HumanServiceImpl humanService;
+/*
 
+  @Test
+  public void whenHumanIdIsProvided_thenRetrievedNameIsCorrect() {
+    Mockito.when(humanService.findBySecondname("Mock Product Name");
+    String testName = humanService.findBySecondname();
+    Assert.assertEquals("Mock Product Name", testName);
+  }
+*/
 
   @Test
   public void contextLoads() throws Exception {

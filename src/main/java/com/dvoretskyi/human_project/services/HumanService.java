@@ -8,6 +8,8 @@ import java.util.List;
  */
 public interface HumanService {
 
+  Human findBySecondname(String secondName);
+
   /**
    * Find by id human.
    *
