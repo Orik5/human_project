@@ -1,10 +1,10 @@
 package com.dvoretskyi.human_project.entity;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,14 +14,12 @@ import lombok.ToString;
 /**
  * The type Human.
  */
-
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
-@Entity
-@Table
 //@JsonInclude(Include.NON_NULL)
 
 public class Human /*extends ResourceSupport*/ {

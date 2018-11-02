@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The type Human project application.
  */
 @SpringBootApplication
+
 public class HumanProjectApplication {
 
 	/**

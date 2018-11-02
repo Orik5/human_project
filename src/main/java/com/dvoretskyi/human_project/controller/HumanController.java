@@ -25,7 +25,6 @@ public class HumanController {
    * The constant logger.
    */
   public static final Logger logger = LoggerFactory.getLogger(HumanController.class);
-
   @Autowired
   private HumanServiceImpl humanService;
 

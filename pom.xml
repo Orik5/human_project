@@ -36,6 +36,10 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-cache</artifactId>
     </dependency>
     <dependency>
@@ -103,20 +107,25 @@
       <artifactId>springfox-swagger2</artifactId>
       <version>2.9.2</version>
     </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>2.13.0</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.mockito</groupId>-->
+      <!--<artifactId>mockito-core</artifactId>-->
+      <!--<version>2.13.0</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+    <!--<scope>provided</scope>-->
+  <!--</dependency>-->
     <!--<dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>mvn clean package-boot-starter-hateoas</artifactId>
     </dependency>-->
-    <dependency>
-      <groupId>org.springframework.hateoas</groupId>
-      <artifactId>spring-hateoas</artifactId>
-      <version>0.19.0.RELEASE</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.hateoas</groupId>-->
+      <!--<artifactId>spring-hateoas</artifactId>-->
+      <!--<version>0.19.0.RELEASE</version>-->
+    <!--</dependency>-->
   </dependencies>
   <build>
     <plugins>
