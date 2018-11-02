@@ -5,6 +5,7 @@ import com.dvoretskyi.human_project.repository.HumanRepository;
 import com.dvoretskyi.human_project.services.HumanService;
 import java.util.ArrayList;
 import java.util.List;
+import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,8 @@ public class HumanServiceImpl implements HumanService {
 
   @Autowired
   private HumanRepository humanRepository;
+  @InjectMocks
+  private HumanRepository humanRepositoryTest;
 
   private List<Human> humanList = new ArrayList<>();
 
