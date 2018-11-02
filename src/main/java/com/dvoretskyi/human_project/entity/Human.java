@@ -17,13 +17,14 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Entity
 @Table
+//@JsonInclude(Include.NON_NULL)
 
-public class Human {
+public class Human /*extends ResourceSupport*/ {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +33,14 @@ public class Human {
   private String secondName;
   private String city;
   private String phoneNumber;
+  /*private final String content;
 
+  @JsonCreator
+  public Human(@JsonProperty("content") String content) {
+    this.content = content;
+  }
 
+  public String getContent() {
+    return content;
+  }*/
 }

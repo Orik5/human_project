@@ -22,8 +22,8 @@ public class ServicesTests {
 
   @Test
   public void whenHumanIdIsProvided_thenRetrievedNameIsCorrect() {
-    Mockito.when(humanService.findBySecondname("Mock Product Name");
-    String testName = humanService.findBySecondname();
+    Mockito.when(humanService.findBySecondName("Mock Product Name");
+    String testName = humanService.findBySecondName();
     Assert.assertEquals("Mock Product Name", testName);
   }
 */

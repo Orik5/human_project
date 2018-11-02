@@ -25,6 +25,7 @@ public class HumanController {
    * The constant logger.
    */
   public static final Logger logger = LoggerFactory.getLogger(HumanController.class);
+
   @Autowired
   private HumanServiceImpl humanService;
 
@@ -34,10 +35,39 @@ public class HumanController {
    *
    * @return the all humans
    */
-  @RequestMapping(value = "/human", method = RequestMethod.GET)
+  @RequestMapping(value = "/human/list", method = RequestMethod.GET/*, produces = *//*{
+      "application/hal+json"}*/)
   public List<Human> getAllHumans() {
     return humanService.findAllHumans();
+
+
   }
+
+/*
+  @RequestMapping(method = RequestMethod.GET, produces = {"application/hal+json"})
+  public Resources<Human> getAllCustomers() {
+    List<Human> allHumans = humanService.findAllHumans();
+
+    for (Human human : allHumans) {
+      Long humanId = human.getId();
+      Link selfLink = linkTo(HumanController.class).slash(humanId).withSelfRel();
+      human.add(selfLink);
+      if (humanService.findById(humanId) != null) {
+        Link ordersLink = linkTo(methodOn(HumanController.class)
+            .getOrdersForCustomer(humanId)).withRel("allOrders");
+        human.add(ordersLink);
+      }
+    }
+
+    Link link = linkTo(HumanController.class).withSelfRel();
+    Resources<Human> result = new Resources<Human>(allHumans, link);
+    return result;
+  }
+
+  private Class<?> getOrdersForCustomer(Long humanId) {
+    return null;
+  }
+*/
 
   /**
    * Gets human.
@@ -56,7 +86,7 @@ public class HumanController {
    * @param human the human
    * @return the human
    */
-  @RequestMapping(value = "/human")
+  @RequestMapping(value = "/add")
   public Human addHuman(Human human) {
     return humanService.saveHuman(human);
   }

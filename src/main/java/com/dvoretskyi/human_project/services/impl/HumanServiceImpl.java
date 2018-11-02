@@ -16,10 +16,11 @@ public class HumanServiceImpl implements HumanService {
 
   @Autowired
   private HumanRepository humanRepository;
+
   private List<Human> humanList = new ArrayList<>();
 
   @Override
-  public Human findBySecondname(String secondName) {
+  public Human findBySecondName(String secondName) {
     return humanRepository.findBySecondName(secondName);
   }
 

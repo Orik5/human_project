@@ -39,25 +39,27 @@ public class HumanRestControllerTest {
     assertThat(found).extracting(Human::getSecondName).containsOnly(null);
   }
 */
-  /*@Test
+/*  @Test
   public void givenEmployees_whenGetEmployees_thenStatus200() throws Exception {
-    createTestEmployee("bob");
-    createTestEmployee("alex");
+    createTestHuman("bob");
+    createTestHuman("alex");
 
     // @formatter:off
-    mvc.perform(get("/api/employees").contentType(MediaType.APPLICATION_JSON))
+    mvc.perform(get("/api/human").contentType(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
         .andExpect(jsonPath("$", hasSize(greaterThanOrEqualTo(2))))
         .andExpect(jsonPath("$[0].name", is("bob")))
-        .andExpect(jsonPath("$[1].name", is("alex")));}*/
+        .andExpect(jsonPath("$[1].name", is("alex")));
+  }*/
   // @formatter:on
 
   //
 
-/*  private void createTestEmployee(String secondName) {
-    Human human = new Human(secondName);
+/*  private void createTestHuman(long id, String firstName, String secondName, String city,
+      String phoneNumber) {
+    Human human = new Human(id,firstName,secondName,city,phoneNumber);
     repository.saveAndFlush(human);
   }*/
 }

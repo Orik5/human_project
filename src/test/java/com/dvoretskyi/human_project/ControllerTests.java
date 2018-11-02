@@ -1,16 +1,20 @@
 package com.dvoretskyi.human_project;
 
 
-public class ControllerTests /*extends AbstractTest*/ {
+import static junit.framework.TestCase.assertEquals;
 
-/*
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+public class ControllerTests extends AbstractTest {
+
   @Override
   @Before
   protected void setUp() {
     super.setUp();
   }
-
-*/
 /*
   @Test
   public void getHumanList() throws Exception {
@@ -41,7 +45,8 @@ public class ControllerTests /*extends AbstractTest*/ {
     assertEquals(201, status);
     String content = mvcResult.getResponse().getContentAsString();
     assertEquals(content, "Human is created successfully");
-  }
+  }*/
+/*
 
 
   @Test
@@ -59,16 +64,17 @@ public class ControllerTests /*extends AbstractTest*/ {
     String content = mvcResult.getResponse().getContentAsString();
     assertEquals(content, "Human is updated successsfully");
   }
+*/
 
 
   @Test
   public void deleteHuman() throws Exception {
-    String uri = "/human/2";
+    String uri = "/human";
     MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.delete(uri)).andReturn();
     int status = mvcResult.getResponse().getStatus();
     assertEquals(200, status);
     String content = mvcResult.getResponse().getContentAsString();
     assertEquals(content, " Human is deleted successsfully");
-  }*/
+  }
 
 }

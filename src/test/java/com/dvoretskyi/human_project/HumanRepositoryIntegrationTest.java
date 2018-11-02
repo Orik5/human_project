@@ -1,10 +1,6 @@
 package com.dvoretskyi.human_project;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import com.dvoretskyi.human_project.entity.Human;
 import com.dvoretskyi.human_project.repository.HumanRepository;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -33,6 +29,7 @@ public class HumanRepositoryIntegrationTest {
     assertThat(fromDb).isNull();
   }*/
 
+/*
   @Test
   public void whenFindBySecondName_thenReturnHuman() {
     // given
@@ -47,6 +44,7 @@ public class HumanRepositoryIntegrationTest {
     assertThat(found.getSecondName())
         .isEqualTo(human.getSecondName());
   }
+*/
 
  /* @Test
   public void whenFindById_thenReturnEmployee() {

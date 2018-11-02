@@ -8,11 +8,11 @@ import java.util.List;
  */
 public interface HumanService {
 
-  Human findBySecondname(String secondName);
+  Human findBySecondName(String secondName);
 
   /**
    * Find by id human.
-   *
+   *s
    * @param id the id
    * @return the human
    */

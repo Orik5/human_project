@@ -17,7 +17,7 @@ public class WebMockTest {
 
 /*  @Test
   public void greetingShouldReturnMessageFromService() throws Exception {
-    when(service.findBySecondname(null));
+    when(service.findBySecondName(null));
     this.mockMvc.perform(get("/api/human")).andDo(print()).andExpect(status().isOk())
         .andExpect(content().string(containsString("Hello Mock")));
   }*/
