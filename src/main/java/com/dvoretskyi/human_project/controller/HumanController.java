@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api")
+//@EnableHypermediaSupport(type = HypermediaType.HAL)
 public class HumanController {
 
   /**
@@ -34,12 +35,18 @@ public class HumanController {
    *
    * @return the all humans
    */
-  @RequestMapping(value = "/human/list", method = RequestMethod.GET/*, produces = *//*{
-      "application/hal+json"}*/)
+
+  @RequestMapping(value = "/humans", method = RequestMethod.GET)/*, produces = *//*{
+      "application/hal+json"}*/
   public List<Human> getAllHumans() {
     return humanService.findAllHumans();
 
 
+  }
+
+  @RequestMapping(value = "/humans{id}", method = RequestMethod.GET)
+  public Human getHumanById(@PathVariable long id) {
+    return humanService.findById(id);
   }
 
 /*
@@ -74,7 +81,7 @@ public class HumanController {
    * @param id the id
    * @return the human
    */
-  @RequestMapping(value = "/human{id}")
+  @RequestMapping(value = "/humans{id}")
   public Human getHuman(@PathVariable("id") long id) {
     return humanService.findById(id);
   }
@@ -85,7 +92,7 @@ public class HumanController {
    * @param human the human
    * @return the human
    */
-  @RequestMapping(value = "/add")
+  @RequestMapping(value = "/humans")
   public Human addHuman(Human human) {
     return humanService.saveHuman(human);
   }
@@ -98,7 +105,7 @@ public class HumanController {
    * @param id the id
    * @return the response entity
    */
-  @RequestMapping(value = "/human/{id}", method = RequestMethod.PUT)
+  @RequestMapping(value = "humans/{id}", method = RequestMethod.PUT)
   public ResponseEntity<Object> updateHuman(@RequestBody Human human, @PathVariable long id) {
 
     Optional<Human> humanOptional = Optional.ofNullable(humanService.findById(id));
@@ -119,7 +126,7 @@ public class HumanController {
    *
    * @param id the id
    */
-  @RequestMapping(value = "/human{id}", method = RequestMethod.DELETE)
+  @RequestMapping(value = "humans{id}", method = RequestMethod.DELETE)
   public void updateHuman(@PathVariable long id) {
     humanService.deleteHumanById(id);
   }

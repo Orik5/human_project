@@ -14,7 +14,8 @@ import org.springframework.test.web.servlet.MockMvc;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = HumanProjectApplication.class)
 @AutoConfigureMockMvc
-// @TestPropertySource(locations = "classpath:application-integrationtest.properties")
+
+//@TestPropertySource(locations = "classpath:application-integrationtest.properties")
 @AutoConfigureTestDatabase
 public class HumanRestControllerTest {
 
@@ -29,16 +30,15 @@ public class HumanRestControllerTest {
     repository.deleteAll();
   }
 
-  /*@Test
+ /* @Test
   public void whenValidInput_thenCreateHuman() throws IOException, Exception {
-    Human bob = new Human(1, null, null, null, null);
+    Human humanThird = new Human(3, "Roman", "Pupkin", "Kyiv", "+383435544");
     mvc.perform(
-        post("/api/human").contentType(MediaType.APPLICATION_JSON).content(JsonUtil.toJson(bob)));
+        post("/api/human/list").contentType(MediaType.APPLICATION_JSON).content(JsonUtil.toJson(humanThird)));
 
     List<Human> found = repository.findAll();
-    assertThat(found).extracting(Human::getSecondName).containsOnly(null);
-  }
-*/
+    assertThat(found).extracting(Human::getSecondName).containsOnly("Pupkin");
+  }*/
 /*  @Test
   public void givenEmployees_whenGetEmployees_thenStatus200() throws Exception {
     createTestHuman("bob");

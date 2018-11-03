@@ -1,10 +1,12 @@
 package com.dvoretskyi.human_project;
 
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertEquals;
 
+import com.dvoretskyi.human_project.entity.Human;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -15,10 +17,9 @@ public class ControllerTests extends AbstractTest {
   protected void setUp() {
     super.setUp();
   }
-/*
-  @Test
+/*  @Test
   public void getHumanList() throws Exception {
-    String uri = "/human";
+    String uri = "/api/humans";
     MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
         .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -27,14 +28,14 @@ public class ControllerTests extends AbstractTest {
     String content = mvcResult.getResponse().getContentAsString();
     Human[] humans = super.mapFromJson(content, Human[].class);
     assertTrue(humans.length > 0);
-  }
+  }*/
 
 
   @Test
   public void createHuman() throws Exception {
-    String uri = "/human";
+    String uri = "/api/humans";
     Human human = new Human();
-    human.setId(3);
+    human.setId(11);
     human.setFirstName("Maria");
     String inputJson = super.mapToJson(human);
     MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
@@ -45,7 +46,7 @@ public class ControllerTests extends AbstractTest {
     assertEquals(201, status);
     String content = mvcResult.getResponse().getContentAsString();
     assertEquals(content, "Human is created successfully");
-  }*/
+  }
 /*
 
 
@@ -66,7 +67,7 @@ public class ControllerTests extends AbstractTest {
   }
 */
 
-
+/*
   @Test
   public void deleteHuman() throws Exception {
     String uri = "/human";
@@ -75,6 +76,6 @@ public class ControllerTests extends AbstractTest {
     assertEquals(200, status);
     String content = mvcResult.getResponse().getContentAsString();
     assertEquals(content, " Human is deleted successsfully");
-  }
+  }*/
 
 }

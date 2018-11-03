@@ -18,15 +18,13 @@ public class ServicesTests {
 
   @Autowired
   private HumanServiceImpl humanService;
-/*
 
-  @Test
+/*  @Test
   public void whenHumanIdIsProvided_thenRetrievedNameIsCorrect() {
-    Mockito.when(humanService.findBySecondName("Mock Product Name");
-    String testName = humanService.findBySecondName();
+    Mockito.when(humanService.findBySecondName("Mock Product Name"));
+    String testName = String.valueOf(humanService.findBySecondName(""));
     Assert.assertEquals("Mock Product Name", testName);
-  }
-*/
+  }*/
 
   @Test
   public void contextLoads() throws Exception {

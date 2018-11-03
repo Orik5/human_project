@@ -1,6 +1,12 @@
 package com.dvoretskyi.human_project;
 
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import com.dvoretskyi.human_project.services.impl.HumanServiceImpl;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
@@ -15,10 +21,9 @@ public class WebMockTest {
   @MockBean
   private HumanServiceImpl service;
 
-/*  @Test
-  public void greetingShouldReturnMessageFromService() throws Exception {
-    when(service.findBySecondName(null));
-    this.mockMvc.perform(get("/api/human")).andDo(print()).andExpect(status().isOk())
-        .andExpect(content().string(containsString("Hello Mock")));
-  }*/
+  @Test
+  public void humanShouldReturnMessageFromService() throws Exception {
+    when(service.findBySecondName(""));
+    this.mockMvc.perform(get("/api/human")).andDo(print()).andExpect(status().isOk());
+  }
 }
