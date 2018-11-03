@@ -105,7 +105,7 @@ public class HumanController {
    * @param id the id
    * @return the response entity
    */
-  @RequestMapping(value = "humans/{id}", method = RequestMethod.PUT)
+  @RequestMapping(value = "/humans/{id}", method = RequestMethod.PUT)
   public ResponseEntity<Object> updateHuman(@RequestBody Human human, @PathVariable long id) {
 
     Optional<Human> humanOptional = Optional.ofNullable(humanService.findById(id));
@@ -126,7 +126,7 @@ public class HumanController {
    *
    * @param id the id
    */
-  @RequestMapping(value = "humans{id}", method = RequestMethod.DELETE)
+  @RequestMapping(value = "`/humans{id}", method = RequestMethod.DELETE)
   public void updateHuman(@PathVariable long id) {
     humanService.deleteHumanById(id);
   }
