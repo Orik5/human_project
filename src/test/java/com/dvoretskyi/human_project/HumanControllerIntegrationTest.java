@@ -1,7 +1,6 @@
 package com.dvoretskyi.human_project;
 
 import com.dvoretskyi.human_project.services.impl.HumanServiceImpl;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
@@ -16,22 +15,20 @@ public class HumanControllerIntegrationTest {
   @MockBean
   private HumanServiceImpl service;
 
-  @Test
-  public void givenHuman_whenGetHumans_thenStatus200()
-      throws Exception {
-/*
+//  @Test
+//  public void givenHuman_whenGetHumans_thenStatus200()
+//      throws Exception {
+//
+//
+//    mvc.perform(get("/api/humans")
+//        .contentType(MediaType.APPLICATION_JSON))
+//        .andExpect(status().isOk())
+//        .andExpect(content()
+//            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+//        .andExpect((ResultMatcher) jsonPath("$[0].name", is("bob")));
+//  }
 
-    createTestHuman("bob");
-
-    mvc.perform(get("/api/human")
-        .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(status().isOk())
-        .andExpect(content()
-            .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$[0].name", is("bob")));
-  }
-
-  @Test
+  /*@Test
   public void givenEmployees_whenGetEmployees_thenReturnJsonArray()
       throws Exception {
     Human human = new Human(3, "Boromyr", "Hortyuk", "Chernihiv", "+38986768478");
@@ -40,7 +37,7 @@ public class HumanControllerIntegrationTest {
 
     given(service.findAllHumans()).willReturn(allHumans);
 
-    mvc.perform(get("/api/human")
+    mvc.perform(get("/api/humans")
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect((ResultMatcher) MockRestRequestMatchers.jsonPath("$", hasSize(1)))
@@ -50,5 +47,4 @@ public class HumanControllerIntegrationTest {
   }
 */
 
-
-}}
+}//}

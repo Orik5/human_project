@@ -1,14 +1,10 @@
 package com.dvoretskyi.human_project;
 
-import com.dvoretskyi.human_project.entity.Human;
-import com.dvoretskyi.human_project.repository.HumanRepository;
 import javafx.application.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 /**
  * The type Human project application.
@@ -28,7 +24,7 @@ public class HumanProjectApplication {
     SpringApplication.run(HumanProjectApplication.class, args);
   }
 
-  @Bean
+ /* @Bean
   public CommandLineRunner istertingIntoDatabase(HumanRepository humanRepository) {
     return (args) -> {
       // save a couple of customers
@@ -58,13 +54,13 @@ public class HumanProjectApplication {
       // fetch customers by last name
       log.info("Customer found with findByLastName('Bauer'):");
       log.info("--------------------------------------------");
-   /*   humanRepository.findBySecondName("Yura").forEach(yura -> {
+   *//*   humanRepository.findBySecondName("Yura").forEach(yura -> {
         log.info(yura.toString());
-      });*/
-       /*for (Human bob : humanRepository.findBySecondName("Bob")) {
+      });*//*
+       *//*for (Human bob : humanRepository.findBySecondName("Bob")) {
        	log.info(bob.toString());
-       }*/
+       }*//*
       log.info("");
     };
-  }
+  }*/
 }

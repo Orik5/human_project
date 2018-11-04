@@ -7,6 +7,8 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.config.EnableHypermediaSupport;
+import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api")
-//@EnableHypermediaSupport(type = HypermediaType.HAL)
+@EnableHypermediaSupport(type = HypermediaType.HAL)
 public class HumanController {
 
   /**
@@ -36,11 +38,15 @@ public class HumanController {
    * @return the all humans
    */
 
-  @RequestMapping(value = "/humans", method = RequestMethod.GET)/*, produces = *//*{
-      "application/hal+json"}*/
+  @RequestMapping(value = "/humans", method = RequestMethod.GET, produces = {
+      "application/hal+json"})
   public List<Human> getAllHumans() {
     return humanService.findAllHumans();
 
+  /*  List<Human> allHumans = humanService.findAllHumans();
+    Link link = linkTo(HateoasController.class).withSelfRel();
+    Resources<HumanDto> result = new Resources<>allHumans, link);
+    return result;*/
 
   }
 

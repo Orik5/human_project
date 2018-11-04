@@ -23,7 +23,7 @@ public class WebMockTest {
 
   @Test
   public void humanShouldReturnMessageFromService() throws Exception {
-    when(service.findBySecondName(""));
-    this.mockMvc.perform(get("/api/human")).andDo(print()).andExpect(status().isOk());
+    when(service.findBySecondName("Bob"));
+    this.mockMvc.perform(get("/humans{id}")).andDo(print()).andExpect(status().isOk());
   }
 }

@@ -18,7 +18,7 @@ public class WebLayerTest {
 
   @Test
   public void shouldReturnDefaultMessage() throws Exception {
-    this.mockMvc.perform(get("/api")).andDo(print()).andExpect(status().isOk())
+    this.mockMvc.perform(get("/api/humans")).andDo(print()).andExpect(status().isOk())
         .andExpect(content().string(containsString("")));
   }
 

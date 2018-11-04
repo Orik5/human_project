@@ -1,5 +1,6 @@
 package com.dvoretskyi.human_project.services;
 
+import com.dvoretskyi.human_project.dto.HumanDto;
 import com.dvoretskyi.human_project.entity.Human;
 import java.util.List;
 
@@ -13,7 +14,8 @@ public interface HumanService {
 
   /**
    * Find by id human.
-   *s
+   * s
+   *
    * @param id the id
    * @return the human
    */
@@ -44,5 +46,7 @@ public interface HumanService {
    * @return the list
    */
   List<Human> findAllHumans();
+
+  List<HumanDto> findAllHumansDto();
 
 }

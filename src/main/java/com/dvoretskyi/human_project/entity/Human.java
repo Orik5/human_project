@@ -19,10 +19,11 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-//@JsonInclude(Include.NON_NULL)
 
-public class Human /*extends ResourceSupport*/ {
+@ToString
+/*@JsonInclude(Include.NON_NULL)*/
+
+public class Human /*extends ResourceSupport */{
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +32,9 @@ public class Human /*extends ResourceSupport*/ {
   private String secondName;
   private String city;
   private String phoneNumber;
-  /*private final String content;
+ // private String content;
 
+/*
   @JsonCreator
   public Human(@JsonProperty("content") String content) {
     this.content = content;
@@ -40,5 +42,8 @@ public class Human /*extends ResourceSupport*/ {
 
   public String getContent() {
     return content;
-  }*/
+  }
+*/
+
+
 }

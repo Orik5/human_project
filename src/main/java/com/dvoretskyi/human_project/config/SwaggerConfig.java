@@ -27,7 +27,7 @@ public class SwaggerConfig {
         .select()
         .apis(RequestHandlerSelectors.basePackage("guru.springframework.controllers"))
         //.paths(PathSelectors.any())
-        .paths(regex("/human.*"))
+        .paths(regex("/humans.*"))
         .build();
   }
 }
