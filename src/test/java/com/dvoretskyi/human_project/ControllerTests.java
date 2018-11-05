@@ -2,6 +2,7 @@ package com.dvoretskyi.human_project;
 
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 import com.dvoretskyi.human_project.entity.Human;
 import org.junit.Before;
@@ -17,7 +18,7 @@ public class ControllerTests extends AbstractTest {
   protected void setUp() {
     super.setUp();
   }
-/*
+
   @Test
   public void getHumanList() throws Exception {
     String uri = "/api/humans";
@@ -26,11 +27,11 @@ public class ControllerTests extends AbstractTest {
 
     int status = mvcResult.getResponse().getStatus();
     assertEquals(200, status);
-    //String content = mvcResult.getResponse().getContentAsString();
-    //Human[] humans = super.mapFromJson(content, Human[].class);
-    //assertTrue(humans.length > 0);
-  }*/
-
+    String content = mvcResult.getResponse().getContentAsString();
+    Human[] humans = super.mapFromJson(content, Human[].class);
+    assertTrue(humans.length > 0);
+  }
+}
 
   /*@Test
   public void createHuman() throws Exception {
@@ -52,7 +53,7 @@ public class ControllerTests extends AbstractTest {
     assertEquals(content, "Human is created successfully");*/
 
 
-  @Test
+/*  @Test
   public void updateHuman() throws Exception {
     String uri = "/humans";
     Human human = new Human();
@@ -67,7 +68,7 @@ public class ControllerTests extends AbstractTest {
     String content = mvcResult.getResponse().getContentAsString();
     assertEquals(content, "Human is updated successsfully");
   }
-}
+}*/
 /*
   @Test
   public void deleteHuman() throws Exception {

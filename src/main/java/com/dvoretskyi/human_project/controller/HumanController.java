@@ -52,10 +52,12 @@ public class HumanController {
    * @return the all humans
    */
 
+
+
   @RequestMapping(value = "/humans", method = RequestMethod.GET, produces = {
       "application/hal+json"})
   public List<Human> getAllHumans() {
-    return humanService.findAllHumans();
+    return  humanService.findAllHumans();
 
 
   }

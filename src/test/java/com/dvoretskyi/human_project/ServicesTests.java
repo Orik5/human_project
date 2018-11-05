@@ -29,5 +29,6 @@ public class ServicesTests {
   @Test
   public void contextLoads() throws Exception {
     assertThat(humanService).isNotNull();
+
   }
 }
