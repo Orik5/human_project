@@ -39,12 +39,12 @@ public class HumanRestControllerTest {
   }
 
 
-
   @Test
   public void whenValidInput_thenCreateHuman() throws IOException, Exception {
     Human humanThird = new Human(10, "Roman", "Pupkin", "Kyiv", "+383435544");
     mvc.perform(
-        post("/api/humans").contentType(MediaType.APPLICATION_JSON).content(JsonUtil.toJson(humanThird)));
+        post("/api/humans").contentType(MediaType.APPLICATION_JSON)
+            .content(JsonUtil.toJson(humanThird)));
 
     List<Human> found = repository.findAll();
     assertThat(found).extracting(Human::getSecondName).containsOnly("Pupkin");

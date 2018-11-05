@@ -1,6 +1,7 @@
 package com.dvoretskyi.human_project.entity;
 
 
+import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,16 +24,21 @@ import lombok.ToString;
 @ToString
 /*@JsonInclude(Include.NON_NULL)*/
 
-public class Human /*extends ResourceSupport */{
+public class Human /*extends ResourceSupport */ {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @ApiModelProperty(notes = "The database generated human ID")
   private long id;
+  @ApiModelProperty(notes = "The first name of human")
   private String firstName;
+  @ApiModelProperty(notes = "The second name of human")
   private String secondName;
+  @ApiModelProperty(notes = "The city of human")
   private String city;
+  @ApiModelProperty(notes = "The phone number of human")
   private String phoneNumber;
- // private String content;
+  // private String content;
 
 /*
   @JsonCreator

@@ -4,15 +4,12 @@ import com.dvoretskyi.human_project.dto.HumanDto;
 import com.dvoretskyi.human_project.services.impl.HumanServiceImpl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.config.EnableHypermediaSupport;
-import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
+/*
 @RestController
-@EnableHypermediaSupport(type = HypermediaType.HAL)
+@EnableHypermediaSupport(type = HypermediaType.HAL)*/
 public class HateoasController {
   @Autowired
   private HumanServiceImpl humanService;

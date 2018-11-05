@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.hateoas.ResourceSupport;
 
 @Getter
 @Setter
@@ -14,7 +15,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(Include.NON_NULL)
-public class HumanAddDto {
+public class HumanAddDto extends ResourceSupport {
 
   private String firstName;
   private String secondName;
