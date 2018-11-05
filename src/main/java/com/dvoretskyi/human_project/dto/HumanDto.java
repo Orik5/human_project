@@ -10,6 +10,9 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.hateoas.ResourceSupport;
 
+/**
+ * The type Human dto.
+ */
 @Getter
 @Setter
 @ToString
@@ -25,7 +28,13 @@ public class HumanDto extends ResourceSupport {
   private String phoneNumber;
   //private String content;
 
-  /*private final String content;
+  /**
+   * Gets to dto.
+   *
+   * @param human the human
+   * @return the to dto
+   */
+/*private final String content;
 
   @JsonCreator
   public Humans(@JsonProperty("content") String content) {

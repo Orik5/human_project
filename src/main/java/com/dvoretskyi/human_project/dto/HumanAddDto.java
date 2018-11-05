@@ -9,6 +9,9 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.hateoas.ResourceSupport;
 
+/**
+ * The type Human add dto.
+ */
 @Getter
 @Setter
 @ToString

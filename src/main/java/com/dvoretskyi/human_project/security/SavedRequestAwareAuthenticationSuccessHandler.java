@@ -12,6 +12,9 @@ import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+/**
+ * The type Saved request aware authentication success handler.
+ */
 @Component
 public class SavedRequestAwareAuthenticationSuccessHandler extends
     SimpleUrlAuthenticationSuccessHandler {
@@ -39,6 +42,11 @@ public class SavedRequestAwareAuthenticationSuccessHandler extends
     clearAuthenticationAttributes(request);
   }
 
+  /**
+   * Sets request cache.
+   *
+   * @param requestCache the request cache
+   */
   public void setRequestCache(final RequestCache requestCache) {
     this.requestCache = requestCache;
   }

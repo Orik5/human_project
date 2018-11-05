@@ -11,12 +11,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * The type Hateoas controller.
+ */
 //
 @RestController
- @EnableHypermediaSupport(type = HypermediaType.HAL)
+@EnableHypermediaSupport(type = HypermediaType.HAL)
 public class HateoasController {
+
   @Autowired
   private HumanServiceImpl humanService;
+
+
+  @RequestMapping(value = "/humans/all", method = RequestMethod.GET, produces = {
+      "application/hal+json"})
+  @ResponseBody
+  public List<HumanDto> findAllHumanDto() {
+    return humanService.findAllHumansDto();
+  }
 
 //  private static final String TEMPLATE = "Hello, %s!";
 
@@ -31,16 +43,6 @@ public class HateoasController {
     return new ResponseEntity<>(humanDto, HttpStatus.OK);
   }
 */
-
-
-
-  @RequestMapping(value = "/humans/all", method = RequestMethod.GET, produces = {
-      "application/hal+json"})
-  @ResponseBody
-  public List<HumanDto> findAllHumanDto() {
-    return humanService.findAllHumansDto();
-  }
-
   /*@RequestMapping(value = "/humans/all", method = RequestMethod.POST)
   public HumanDto addHuman(@RequestBody HumanAddDto dto) {
     return humanService.saveHuman(dto.getFirstName(), dto.getSecondName(), dto.getCity(), dto.getPhoneNumber());

@@ -20,6 +20,9 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * The type Human project configuration.
+ */
 @Configuration
 @EnableSwagger2
 //@EnableWebMvc
@@ -27,6 +30,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableHypermediaSupport(type = {HypermediaType.HAL})
 public class HumanProjectConfiguration extends WebMvcConfigurationSupport {
 
+  /**
+   * Api docket.
+   *
+   * @return the docket
+   */
   @Bean
   public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
@@ -37,6 +45,11 @@ public class HumanProjectConfiguration extends WebMvcConfigurationSupport {
         .build();
   }
 
+  /**
+   * Curie provider curie provider.
+   *
+   * @return the curie provider
+   */
   @Bean
   public CurieProvider curieProvider() {
     return new DefaultCurieProvider("ex", new UriTemplate("http://www.example.com/rels/{rel}"));
@@ -51,6 +64,11 @@ public class HumanProjectConfiguration extends WebMvcConfigurationSupport {
         .addResourceLocations("classpath:/META-INF/resources/webjars/");
   }
 
+  /**
+   * Some filter registration filter registration bean.
+   *
+   * @return the filter registration bean
+   */
   @Bean
   public FilterRegistrationBean someFilterRegistration() {
     FilterRegistrationBean registration = new FilterRegistrationBean();
@@ -60,6 +78,12 @@ public class HumanProjectConfiguration extends WebMvcConfigurationSupport {
     registration.setOrder(1);
     return registration;
   }
+
+  /**
+   * Etag filter filter.
+   *
+   * @return the filter
+   */
   @Bean(name = "etagFilter")
   public Filter etagFilter() {
     return new ShallowEtagHeaderFilter();

@@ -10,6 +10,12 @@ import java.util.List;
 public interface HumanService {
 
 
+  /**
+   * Find by second name human.
+   *
+   * @param secondName the second name
+   * @return the human
+   */
   Human findBySecondName(String secondName);
 
   /**
@@ -27,7 +33,6 @@ public interface HumanService {
    * @param human the human
    * @return the human
    */
-
   Human saveHuman(Human human);
 
 
@@ -38,6 +43,11 @@ public interface HumanService {
    */
   void deleteHumanById(long id);
 
+  /**
+   * Find all.
+   *
+   * @param human the human
+   */
   void findAll(Human human);
 
   /**
@@ -47,6 +57,11 @@ public interface HumanService {
    */
   List<Human> findAllHumans();
 
+  /**
+   * Find all humans dto list.
+   *
+   * @return the list
+   */
   List<HumanDto> findAllHumansDto();
 
 }

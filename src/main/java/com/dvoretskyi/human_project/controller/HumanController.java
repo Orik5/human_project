@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api")
-@Api(value="humanproject")
+@Api(value = "humanproject")
 @EnableHypermediaSupport(type = HypermediaType.HAL)
 public class HumanController {
 
@@ -37,8 +37,12 @@ public class HumanController {
   private HumanServiceImpl humanService;
 
 
-
-  @ApiOperation(value = "View a list of humans",response = Iterable.class)
+  /**
+   * Gets all humans.
+   *
+   * @return the all humans
+   */
+  @ApiOperation(value = "View a list of humans", response = Iterable.class)
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "Successfully retrieved list"),
       @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
@@ -52,12 +56,10 @@ public class HumanController {
    * @return the all humans
    */
 
-
-
   @RequestMapping(value = "/humans", method = RequestMethod.GET, produces = {
       "application/hal+json"})
   public List<Human> getAllHumans() {
-    return  humanService.findAllHumans();
+    return humanService.findAllHumans();
 
 
   }
@@ -106,7 +108,7 @@ public class HumanController {
    * @param id the id
    * @return the human
    */
-  @ApiOperation(value = "Search human by Id",response = Human.class)
+  @ApiOperation(value = "Search human by Id", response = Human.class)
   @RequestMapping(value = "/humans{id}")
   public Human getHuman(@PathVariable("id") long id) {
     return humanService.findById(id);
@@ -132,7 +134,6 @@ public class HumanController {
    * @param id the id
    * @return the response entity
    */
-
   @ApiOperation(value = "Update human")
   @RequestMapping(value = "/humans/{id}", method = RequestMethod.PUT)
   public ResponseEntity<Object> updateHuman(@RequestBody Human human, @PathVariable long id) {
