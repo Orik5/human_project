@@ -158,7 +158,7 @@ public class HumanController {
    */
   @ApiOperation(value = "Delete human")
   @RequestMapping(value = "/humans{id}", method = RequestMethod.DELETE)
-  public void updateHuman(@PathVariable long id) {
+  public void deleteHuman(@PathVariable long id) {
     humanService.deleteHumanById(id);
   }
 
