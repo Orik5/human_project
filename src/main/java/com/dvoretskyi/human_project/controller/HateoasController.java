@@ -8,7 +8,6 @@ import org.springframework.hateoas.config.EnableHypermediaSupport;
 import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -25,7 +24,7 @@ public class HateoasController {
 
   @RequestMapping(value = "/humans/all", method = RequestMethod.GET, produces = {
       "application/hal+json"})
-  @ResponseBody
+  //@ResponseBody
   public List<HumanDto> findAllHumanDto() {
     return humanService.findAllHumansDto();
   }

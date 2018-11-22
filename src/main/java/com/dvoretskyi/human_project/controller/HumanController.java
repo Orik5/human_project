@@ -56,7 +56,7 @@ public class HumanController {
    * @return the all humans
    */
   @ApiOperation(value = "View a list of humans", response = Iterable.class)
-  @RequestMapping(value = "/humans", method = RequestMethod.GET, produces = {
+  @RequestMapping(value = "/humans/all", method = RequestMethod.GET, produces = {
       "application/hal+json"})
   public List<Human> getAllHumans() {
     return humanService.findAllHumans();
@@ -64,18 +64,7 @@ public class HumanController {
 
   }
 
-  /*  List<Human> allHumans = humanService.findAllHumans();
-    Link link = linkTo(HateoasController.class).withSelfRel();
-    Resources<HumanDto> result = new Resources<>allHumans, link);
-    return result;*/
 
-
-
- /* @RequestMapping(value = "/humans{id}", method = RequestMethod.GET)
-  public Human getHumanById(@PathVariable long id) {
-    return humanService.findById(id);
-  }
-*/
 /*
   @RequestMapping(method = RequestMethod.GET, produces = {"application/hal+json"})
   public Resources<Human> getAllCustomers() {
@@ -109,7 +98,8 @@ public class HumanController {
    * @return the human
    */
   @ApiOperation(value = "Search human by Id", response = Human.class)
-  @RequestMapping(value = "/humans{id}")
+  @RequestMapping(value = "/humans{id}",method = RequestMethod.GET,produces = {
+      "application/hal+json"})
   public Human getHuman(@PathVariable("id") long id) {
     return humanService.findById(id);
   }
@@ -157,7 +147,7 @@ public class HumanController {
    * @param id the id
    */
   @ApiOperation(value = "Delete human")
-  @RequestMapping(value = "/humans{id}", method = RequestMethod.DELETE)
+  @RequestMapping(value = "/humans/{id}", method = RequestMethod.DELETE)
   public void deleteHuman(@PathVariable long id) {
     humanService.deleteHumanById(id);
   }

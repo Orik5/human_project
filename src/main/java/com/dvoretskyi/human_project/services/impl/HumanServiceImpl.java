@@ -21,18 +21,6 @@ public class HumanServiceImpl implements HumanService {
   @InjectMocks
   private HumanRepository humanRepositoryTest;
 
-  // private List<Human> humanList;
-
-/*  public HumanServiceImpl() {
-    humanList = new ArrayList<>();
-    Human humanFirst = new Human(1, "Oleh", "Gonta", "L'viv", "+827373869");
-    Human humanSecond = new Human(2, "Rob", "George", "Boston", "+3804090904");
-    Human humanThird = new Human(3, "Roman", "Pupkin", "Kyiv", "+383435544");
-
-    humanList.add(humanFirst);
-    humanList.add(humanSecond);
-    humanList.add(humanThird);
-  }*/
 
   @Override
   public Human findBySecondName(String secondName) {
