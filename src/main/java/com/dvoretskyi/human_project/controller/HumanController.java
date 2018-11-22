@@ -42,7 +42,7 @@ public class HumanController {
    *
    * @return the all humans
    */
-  @ApiOperation(value = "View a list of humans", response = Iterable.class)
+
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "Successfully retrieved list"),
       @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
@@ -55,7 +55,7 @@ public class HumanController {
    *
    * @return the all humans
    */
-
+  @ApiOperation(value = "View a list of humans", response = Iterable.class)
   @RequestMapping(value = "/humans", method = RequestMethod.GET, produces = {
       "application/hal+json"})
   public List<Human> getAllHumans() {
@@ -121,7 +121,7 @@ public class HumanController {
    * @return the human
    */
   @ApiOperation(value = "Add human")
-  @RequestMapping(value = "/humans")
+  @RequestMapping(value = "/humans",method = RequestMethod.POST)
   public Human addHuman(Human human) {
     return humanService.saveHuman(human);
   }
